@@ -1,0 +1,48 @@
+{
+	"name": "directus-extension-pwa-hook",
+	"description": "Progressive Web App (PWA) support for Directus admin interface with automatic meta tags, manifest.json, and service worker",
+	"version": "1.0.0",
+	"license": "MIT",
+	"author": "JoshTheDerf",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/JoshTheDerf/directus-extension-pwa-hook.git"
+	},
+	"bugs": {
+		"url": "https://github.com/JoshTheDerf/directus-extension-pwa-hook/issues"
+	},
+	"homepage": "https://github.com/JoshTheDerf/directus-extension-pwa-hook#readme",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-extension-hook",
+		"pwa",
+		"progressive-web-app",
+		"service-worker",
+		"manifest",
+		"offline"
+	],
+	"icon": "extension",
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"directus:extension": {
+		"type": "hook",
+		"path": "dist/index.js",
+		"source": "src/index.ts",
+		"host": "^10.10.0"
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link",
+		"validate": "directus-extension validate",
+		"prepublishOnly": "npm run build"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "17.0.3",
+		"typescript": "^5.9.3"
+	},
+	"dependencies": {}
+}
